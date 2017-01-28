@@ -7,4 +7,5 @@ a PC.
 * disk_usage.py -- Calculates the file sizes of each file under the starting directory
 * backupTextToZip.py -- Archives python source files with .py extension as well as .txt files
 in a directory tree
+* selective_copy.py -- Copies .jpg images in the directory tree to a backup directory.
 
