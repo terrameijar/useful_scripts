@@ -8,4 +8,5 @@ a PC.
 * backupTextToZip.py -- Archives python source files with .py extension as well as .txt files
 in a directory tree
 * selective_copy.py -- Copies .jpg images in the directory tree to a backup directory.
-
+* map_it.py -- Launches a map in the browser using an address from the
+ command line or clipboard.
