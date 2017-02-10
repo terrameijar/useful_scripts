@@ -11,3 +11,4 @@ in a directory tree
 * map_it.py -- Launches a map in the browser using an address from the
  command line or clipboard.
 * lucky.py -- Opens several Google search results in different tabs.
+* download_xkcd.py -- Downloads every single XKCD comic.
