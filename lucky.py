@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#! /usr/bin/env python
 # lucky.py -- Opens several Google search results.
 
 import sys
