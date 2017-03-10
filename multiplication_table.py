@@ -14,6 +14,11 @@ except ValueError:
     print "[number] means an integer only."
     sys.exit()
 
+except IndexError:
+    print "Usage: multiplication_table.py [number]"
+    print "[number] means an integer only."
+    sys.exit()
+
 
 # Create a workbook
 work_book = openpyxl.Workbook()
