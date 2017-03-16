@@ -12,3 +12,4 @@ in a directory tree
  command line or clipboard.
 * lucky.py -- Opens several Google search results in different tabs.
 * download_xkcd.py -- Downloads every single XKCD comic.
+* work_logger.py -- Creates a record for osticket tickets I work on each day
