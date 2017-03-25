@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+# Logs osticket URLs from the clipboard to a file
 
 import os
 import datetime
