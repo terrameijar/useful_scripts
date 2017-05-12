@@ -2,11 +2,14 @@
 # Logs osticket URLs from the clipboard to a file
 
 import os
-import datetime
-import time
-import pyperclip
 import re
+import time
 import logging
+import datetime
+import pyperclip
+import subprocess as s
+
+
 
 
 def write_to_file():
@@ -38,13 +41,15 @@ def write_to_file():
                         for ticket in tickets:
                             if osticket_url in ticket:
                                 found = True
-                                logging.info('Duplicate URL found, skipping')
+                                logging.debug('Duplicate URL found, skipping')
                         if not found:
                                 log_file.write(osticket_url + '\n')
-                                logging.info('%s written to logfile'
+                                logging.debug('%s written to logfile'
                                              % osticket_url)
+                                s.call(['notify-send', '-i', 'emblem-default',
+                                        'Ticket URL written to logfile'])
     except AttributeError:
-        logging.warning("Clipboard does not contain osticket url, skipping")
+        logging.debug("Clipboard does not contain osticket url, skipping")
         pass
 
 
@@ -53,11 +58,14 @@ def main():
         level=logging.INFO,
         format='%(asctime)s - %(levelname)s - %(message)s'
     )
+    logging.debug("Work Logger initialised")
+    s.call(['notify-send','-i', 'emblem-generic','Work Logger initialised' ])
     active = True
     while active:
-        logging.info("Loop starting")
+        logging.debug("Loop starting")
         write_to_file()
-        logging.info("Loop complete. Restarting after 30 secs")
-        time.sleep(30)
+        logging.debug("Loop complete. Restarting after 5 secs")
+        time.sleep(5)
 
-main()
+if __name__ == '__main__':
+    main()
