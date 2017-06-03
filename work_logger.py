@@ -3,13 +3,10 @@
 
 import os
 import re
-import time
 import logging
 import datetime
 import pyperclip
 import subprocess as s
-
-
 
 
 def write_to_file():
@@ -45,7 +42,7 @@ def write_to_file():
                         if not found:
                                 log_file.write(osticket_url + '\n')
                                 logging.debug('%s written to logfile'
-                                             % osticket_url)
+                                              % osticket_url)
                                 s.call(['notify-send', '-i', 'emblem-default',
                                         'Ticket URL written to logfile'])
     except AttributeError:
@@ -59,13 +56,11 @@ def main():
         format='%(asctime)s - %(levelname)s - %(message)s'
     )
     logging.debug("Work Logger initialised")
-    s.call(['notify-send','-i', 'emblem-generic','Work Logger initialised' ])
+    s.call(['notify-send', '-i', 'emblem-generic', 'Work Logger initialised'])
     active = True
     while active:
         logging.debug("Loop starting")
         write_to_file()
-        logging.debug("Loop complete. Restarting after 5 secs")
-        time.sleep(5)
 
 if __name__ == '__main__':
     main()
